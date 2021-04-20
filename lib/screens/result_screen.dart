@@ -17,6 +17,8 @@ import 'package:gogreen/screens/home_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../components/variables.dart';
+
 class ResultScreen extends StatefulWidget {
   static String id = 'result_screen';
   @override
@@ -42,6 +44,7 @@ class _ResultScreenState extends State<ResultScreen>
 
   void addResultToCloud() {
     Firestore.instance.collection('footprint').add({
+      'isNew': true,
       'user': '$userName',
       'latitude': userLatitude,
       'longitude': userLongitude,
@@ -49,6 +52,7 @@ class _ResultScreenState extends State<ResultScreen>
       'housingFootprint': housingFootprint,
       'travelFootprint': travelFootprint,
       'foodFootprint': foodFootprint,
+      'habitsFootprint': productFootprint,
       'timeStamp': DateTime.now()
     });
   }
@@ -292,7 +296,22 @@ class _ResultScreenState extends State<ResultScreen>
                           height: 10.0,
                         ),
                         Text(
-                          '$totalFootprint Tons CO2/year',
+                          '$totalFootprint %',
+                          style: TextStyle(
+                              color: Colors.red[900],
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          totalFootprint <= 100 && totalFootprint > 80
+                              ? 'Very High'
+                              : totalFootprint <= 80 && totalFootprint > 60
+                                  ? 'High'
+                                  : totalFootprint <= 60 && totalFootprint > 40
+                                      ? 'Moderate'
+                                      : totalFootprint <= 40 &&
+                                              totalFootprint > 20
+                                          ? 'Less'
+                                          : 'Very Less',
                           style: TextStyle(color: Colors.red[900]),
                         ),
                         SizedBox(
@@ -312,7 +331,7 @@ class _ResultScreenState extends State<ResultScreen>
                                     height: 15.0,
                                   ),
                                   Text(
-                                    'Housing',
+                                    '\nHousing',
                                     style: TextStyle(
                                         color: kInputTextColor,
                                         fontWeight: FontWeight.bold,
@@ -322,15 +341,27 @@ class _ResultScreenState extends State<ResultScreen>
                                     height: 5.0,
                                   ),
                                   Text(
-                                    '$housingFootprint tons',
+                                    housingFootprint <= 100 &&
+                                            housingFootprint > 80
+                                        ? 'Very High'
+                                        : housingFootprint <= 80 &&
+                                                housingFootprint > 60
+                                            ? 'High'
+                                            : housingFootprint <= 60 &&
+                                                    housingFootprint > 40
+                                                ? 'Moderate'
+                                                : housingFootprint <= 40 &&
+                                                        housingFootprint > 20
+                                                    ? 'Less'
+                                                    : 'Very Less',
                                     style: TextStyle(
                                         color: kInputTextColor, fontSize: 10),
                                   ),
-                                  Text(
-                                    'Co2/year',
-                                    style: TextStyle(
-                                        color: kInputTextColor, fontSize: 10),
-                                  )
+                                  // Text(
+                                  //   'Co2/year',
+                                  //   style: TextStyle(
+                                  //       color: kInputTextColor, fontSize: 10),
+                                  // )
                                 ],
                               ),
                             ),
@@ -345,7 +376,7 @@ class _ResultScreenState extends State<ResultScreen>
                                     height: 15.0,
                                   ),
                                   Text(
-                                    'Travel',
+                                    '\nTravel',
                                     style: TextStyle(
                                         color: kInputTextColor,
                                         fontWeight: FontWeight.bold,
@@ -355,15 +386,27 @@ class _ResultScreenState extends State<ResultScreen>
                                     height: 5.0,
                                   ),
                                   Text(
-                                    '$travelFootprint tons',
+                                    travelFootprint <= 100 &&
+                                            travelFootprint > 80
+                                        ? 'Very High'
+                                        : travelFootprint <= 80 &&
+                                                travelFootprint > 60
+                                            ? 'High'
+                                            : travelFootprint <= 60 &&
+                                                    travelFootprint > 40
+                                                ? 'Moderate'
+                                                : travelFootprint <= 40 &&
+                                                        travelFootprint > 20
+                                                    ? 'Less'
+                                                    : 'Very Less',
                                     style: TextStyle(
                                         color: kInputTextColor, fontSize: 10),
                                   ),
-                                  Text(
-                                    'Co2/year',
-                                    style: TextStyle(
-                                        color: kInputTextColor, fontSize: 10),
-                                  )
+                                  // Text(
+                                  //   'Co2/year',
+                                  //   style: TextStyle(
+                                  //       color: kInputTextColor, fontSize: 10),
+                                  // )
                                 ],
                               ),
                             ),
@@ -378,7 +421,7 @@ class _ResultScreenState extends State<ResultScreen>
                                     height: 15.0,
                                   ),
                                   Text(
-                                    'Food',
+                                    '\nFood',
                                     style: TextStyle(
                                         color: kInputTextColor,
                                         fontWeight: FontWeight.bold,
@@ -388,51 +431,74 @@ class _ResultScreenState extends State<ResultScreen>
                                     height: 5.0,
                                   ),
                                   Text(
-                                    '$foodFootprint tons',
+                                    foodFootprint <= 100 && foodFootprint > 80
+                                        ? 'Very High'
+                                        : foodFootprint <= 80 &&
+                                                foodFootprint > 60
+                                            ? 'High'
+                                            : foodFootprint <= 60 &&
+                                                    foodFootprint > 40
+                                                ? 'Moderate'
+                                                : foodFootprint <= 40 &&
+                                                        foodFootprint > 20
+                                                    ? 'Less'
+                                                    : 'Very Less',
                                     style: TextStyle(
                                         color: kInputTextColor, fontSize: 10),
                                   ),
-                                  Text(
-                                    'Co2/year',
-                                    style: TextStyle(
-                                        color: kInputTextColor, fontSize: 10),
-                                  )
+                                  // Text(
+                                  //   'Co2/year',
+                                  //   style: TextStyle(
+                                  //       color: kInputTextColor, fontSize: 10),
+                                  // )
                                 ],
                               ),
                             ),
-//                      Container(
-//                        child: Column(
-//                          mainAxisAlignment: MainAxisAlignment.center,
-//                          children: <Widget>[
-//                            RadialProgress(
-//                              goalCompleted: productPercentage,
-//                            ),
-//                            SizedBox(
-//                              height: 15.0,
-//                            ),
-//                            Text(
-//                              'Product',
-//                              style: TextStyle(
-//                                  color: kInputTextColor,
-//                                  fontWeight: FontWeight.bold,
-//                                  fontSize: 15),
-//                            ),
-//                            SizedBox(
-//                              height: 5.0,
-//                            ),
-//                            Text(
-//                              '$productFootprint tons',
-//                              style: TextStyle(
-//                                  color: kInputTextColor, fontSize: 10),
-//                            ),
-//                            Text(
-//                              'Co2/year',
-//                              style: TextStyle(
-//                                  color: kInputTextColor, fontSize: 10),
-//                            )
-//                          ],
-//                        ),
-//                      ),qas co
+                            Container(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  RadialProgress(
+                                    goalCompleted: productPercentage,
+                                  ),
+                                  SizedBox(
+                                    height: 15.0,
+                                  ),
+                                  Text(
+                                    'Habits and\n Practices',
+                                    style: TextStyle(
+                                        color: kInputTextColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                  SizedBox(
+                                    height: 5.0,
+                                  ),
+                                  Text(
+                                    productFootprint <= 100 &&
+                                            productFootprint > 80
+                                        ? 'Very High'
+                                        : productFootprint <= 80 &&
+                                                productFootprint > 60
+                                            ? 'High'
+                                            : productFootprint <= 60 &&
+                                                    productFootprint > 40
+                                                ? 'Moderate'
+                                                : productFootprint <= 40 &&
+                                                        productFootprint > 20
+                                                    ? 'Less'
+                                                    : 'Very Less',
+                                    style: TextStyle(
+                                        color: kInputTextColor, fontSize: 10),
+                                  ),
+                                  // Text(
+                                  //   'Co2/year',
+                                  //   style: TextStyle(
+                                  //       color: kInputTextColor, fontSize: 10),
+                                  // )
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                         Padding(

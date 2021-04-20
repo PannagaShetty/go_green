@@ -115,9 +115,15 @@ class RadialPainter extends CustomPainter {
         math.radians(-90), math.radians(360), false, paint);
 
     Paint progressPaint = Paint()
-      ..color = progressColor <= 25
-          ? Colors.green
-          : progressColor <= 50 ? Colors.orangeAccent : Colors.red
+      ..color = progressColor <= 20
+          ? Colors.yellow.shade700
+          : progressColor <= 40
+              ? Colors.orangeAccent
+              : progressColor <= 60
+                  ? Colors.green
+                  : progressColor <= 60
+                      ? Colors.redAccent
+                      : Colors.red
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = 7.0;
@@ -130,9 +136,15 @@ class RadialPainter extends CustomPainter {
         progressPaint);
 
     var dotPaint = Paint()
-      ..color = progressColor <= 25
-          ? Colors.green
-          : progressColor <= 50 ? Colors.orangeAccent : Colors.red;
+      ..color = progressColor <= 20
+          ? Colors.yellow.shade700
+          : progressColor <= 40
+              ? Colors.orangeAccent
+              : progressColor <= 60
+                  ? Colors.green
+                  : progressColor <= 60
+                      ? Colors.redAccent
+                      : Colors.red;
 
     var dx = center.dx +
         size.width /

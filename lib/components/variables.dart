@@ -25,6 +25,7 @@ double electricalValue = 0;
 double medicalValue = 0;
 double clothingValue = 0;
 double householdValue = 0;
+double eWasteValue = 0;
 
 bool housingContainerVisibility = true;
 
@@ -60,6 +61,7 @@ double electricalFootprint = 0;
 double householdFootprint = 0;
 double clothingFootprint = 0;
 double medicalFootprint = 0;
+double eWasteFootprint = 0;
 
 double housingFootprint = 0;
 double travelFootprint = 0;
@@ -100,6 +102,7 @@ class Reset {
     medicalValue = 0;
     clothingValue = 0;
     householdValue = 0;
+    eWasteValue = 0;
     housingContainerVisibility = true;
     travelContainerVisibility = false;
     foodContainerVisibility = false;

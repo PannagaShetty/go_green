@@ -170,7 +170,7 @@ class _InputScreenState extends State<InputScreen> {
 
                                         InputText(
                                           text:
-                                              'Your Average Monthly Electricity Bill Amount (in Rupees)',
+                                              'Eco-friendliness of your house is',
                                         ),
                                         CustomSlider(
                                           icon: kElectricityIcon,
@@ -201,7 +201,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average consumption of Water per day in House(in Liters)',
+                                              'Generally rated Stars for Electronic Gadgets at your house',
                                         ),
                                         CustomSlider(
                                           value: waterValue,
@@ -232,7 +232,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Amount of LPG used per month (in Kg)',
+                                              'Use of eco- friendly energy Sources at Home',
                                         ),
                                         CustomSlider(
                                           division: maxLpgValueD,
@@ -263,7 +263,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Amount of Dry Waste Dumped per week (in Kg)',
+                                              'Knowledge on  eco- friendliness of Members Present in your house',
                                         ),
                                         CustomSlider(
                                           division: maxWasteValueD,
@@ -294,7 +294,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Amount of Wet Waste Dumped per week (in Kg)',
+                                              'Compared to your neighbors, how much trash do you generate',
                                         ),
                                         CustomSlider(
                                           division: maxWetWasteValueD,
@@ -387,7 +387,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Distance travelled in Bike per Day (in KM)',
+                                              'Involvement of Vehicles in your usual commuting mode ',
                                         ),
                                         CustomSlider(
                                           icon: kBikeIcon,
@@ -418,7 +418,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Distance travelled in Car per Day (in KM)',
+                                              'Distance from your Residence to College',
                                         ),
                                         CustomSlider(
                                           value: carValue,
@@ -449,7 +449,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Distance travelled in Bus per Day (in KM)',
+                                              'Frequency of using electric vehicles',
                                         ),
                                         CustomSlider(
                                           division: maxBusValueD,
@@ -480,7 +480,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Distance travelled in Rail per Month (in KM)',
+                                              'Amount of travel you do in a vehicle per month',
                                         ),
                                         CustomSlider(
                                           division: maxRailValueD,
@@ -511,7 +511,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average Distance travelled in Aeroplane per Month (in KM)',
+                                              'Fuel efficiency of Vehicle you travel',
                                         ),
                                         CustomSlider(
                                           division: maxAeroplaneValueD,
@@ -612,8 +612,7 @@ class _InputScreenState extends State<InputScreen> {
                                           height: 10.0,
                                         ),
                                         InputText(
-                                          text:
-                                              'Average amount of Meat consumed per week (in kg)',
+                                          text: 'Amount of Meat consumption',
                                         ),
                                         CustomSlider(
                                           icon: kMeatIcon,
@@ -644,7 +643,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average amount of Dairy Products consumed per week (in Liters)',
+                                              'Amount of Dairy products consumption ',
                                         ),
                                         CustomSlider(
                                           value: dairyValue,
@@ -674,8 +673,7 @@ class _InputScreenState extends State<InputScreen> {
                                           },
                                         ),
                                         InputText(
-                                          text:
-                                              'Average amount of Vegetables consumed per week (in kg)',
+                                          text: 'Use of Rice over Wheat',
                                         ),
                                         CustomSlider(
                                           division: maxVegetableValueD,
@@ -705,8 +703,7 @@ class _InputScreenState extends State<InputScreen> {
                                           },
                                         ),
                                         InputText(
-                                          text:
-                                              'Average amount of Fruits consumed per week (in kg)',
+                                          text: 'Use of Vegetables and Fruits',
                                         ),
                                         CustomSlider(
                                           division: maxFruitsValueD,
@@ -737,7 +734,7 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         InputText(
                                           text:
-                                              'Average amount of Grains consumed per week(in kg)',
+                                              'Amount of food grown for household consumption',
                                         ),
                                         CustomSlider(
                                           division: maxGrainValueD,
@@ -766,68 +763,69 @@ class _InputScreenState extends State<InputScreen> {
                                             });
                                           },
                                         ),
-                                        InputText(
-                                          text:
-                                              'Average amount of Snacks consumed per week (in Grams)',
-                                        ),
-                                        CustomSlider(
-                                          division: maxSnacksValueD,
-                                          min: 0.0,
-                                          max: maxSnacksValue,
-                                          icon: kSnacksIcon,
-                                          unit: 'g',
-                                          value: snacksValue,
-                                          onPress: (value) {
-                                            setState(
-                                              () {
-                                                snacksValue = value;
-                                              },
-                                            );
-                                          },
-                                          onPressPlus: () {
-                                            setState(() {
-                                              snacksValue++;
-                                            });
-                                          },
-                                          onPressMinus: () {
-                                            setState(() {
-                                              if (snacksValue > 0) {
-                                                snacksValue--;
-                                              }
-                                            });
-                                          },
-                                        ),
-                                        InputText(
-                                          text:
-                                              'Average amount of Soft Drinks consumed per week (in Liters)',
-                                        ),
-                                        CustomSlider(
-                                          value: drinksValue,
-                                          min: 0.0,
-                                          max: maxDrinksValue,
-                                          icon: kDrinksIcon,
-                                          unit: 'L',
-                                          onPress: (value) {
-                                            setState(
-                                              () {
-                                                drinksValue = value;
-                                              },
-                                            );
-                                          },
-                                          division: maxDrinksValueD,
-                                          onPressPlus: () {
-                                            setState(() {
-                                              drinksValue++;
-                                            });
-                                          },
-                                          onPressMinus: () {
-                                            setState(() {
-                                              if (drinksValue > 0) {
-                                                drinksValue--;
-                                              }
-                                            });
-                                          },
-                                        ),
+                                        //   InputText(
+                                        //     text:
+                                        //         'Average amount of Snacks consumed per week (in Grams)',
+                                        //   ),
+                                        //   CustomSlider(
+                                        //     division: maxSnacksValueD,
+                                        //     min: 0.0,
+                                        //     max: maxSnacksValue,
+                                        //     icon: kSnacksIcon,
+                                        //     unit: 'g',
+                                        //     value: snacksValue,
+                                        //     onPress: (value) {
+                                        //       setState(
+                                        //         () {
+                                        //           snacksValue = value;
+                                        //         },
+                                        //       );
+                                        //     },
+                                        //     onPressPlus: () {
+                                        //       setState(() {
+                                        //         snacksValue++;
+                                        //       });
+                                        //     },
+                                        //     onPressMinus: () {
+                                        //       setState(() {
+                                        //         if (snacksValue > 0) {
+                                        //           snacksValue--;
+                                        //         }
+                                        //       });
+                                        //     },
+                                        //   ),
+                                        //   InputText(
+                                        //     text:
+                                        //         'Average amount of Soft Drinks consumed per week (in Liters)',
+                                        //   ),
+                                        //   CustomSlider(
+                                        //     value: drinksValue,
+                                        //     min: 0.0,
+                                        //     max: maxDrinksValue,
+                                        //     icon: kDrinksIcon,
+                                        //     unit: 'L',
+                                        //     onPress: (value) {
+                                        //       setState(
+                                        //         () {
+                                        //           drinksValue = value;
+                                        //         },
+                                        //       );
+                                        //     },
+                                        //     division: maxDrinksValueD,
+                                        //     onPressPlus: () {
+                                        //       setState(() {
+                                        //         drinksValue++;
+                                        //       });
+                                        //     },
+                                        //     onPressMinus: () {
+                                        //       setState(() {
+                                        //         if (drinksValue > 0) {
+                                        //           drinksValue--;
+                                        //         }
+                                        //       });
+                                        //     },
+                                        //   ),
+                                        //
                                       ],
                                     ),
                                     Row(
@@ -852,19 +850,174 @@ class _InputScreenState extends State<InputScreen> {
                                         ),
                                         CustomButton(
                                           inputText: 'Next >',
-//                                    onPress: () {
-//                                      setState(() {
-//                                        foodContainerVisibility = false;
-//                                        productContainerVisibility = true;
-//                                        containerCount = 4;
-//                                      });
-//                                      _scrollController.animateTo(
-//                                        0.0,
-//                                        curve: Curves.easeOut,
-//                                        duration:
-//                                            const Duration(milliseconds: 300),
-//                                      );
-//                                    },
+                                          onPress: () {
+                                            setState(() {
+                                              foodContainerVisibility = false;
+                                              productContainerVisibility = true;
+                                              containerCount = 4;
+                                            });
+                                            _scrollController.animateTo(
+                                              0.0,
+                                              curve: Curves.easeOut,
+                                              duration: const Duration(
+                                                  milliseconds: 300),
+                                            );
+                                          },
+                                        ),
+                                      ],
+                                    ),
+
+                                    //housing container end
+                                  ],
+                                ),
+                                decoration: kInputContainerDecoration,
+                              ),
+                            ),
+                          ),
+                          //Food container
+
+                          // product container
+                          Visibility(
+                            visible: productContainerVisibility,
+                            child: Padding(
+                              padding: kPaddingInputContainer,
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: <Widget>[
+                                    InputHeadingContainer(
+                                      text: 'Habits and Practices',
+                                      image: AssetImage('images/shop.jpg'),
+                                      fontSize: 25.0,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        SizedBox(
+                                          height: 10.0,
+                                        ),
+                                        InputText(
+                                          text:
+                                              'Preference of Digital Platforms over Print materials',
+                                        ),
+                                        CustomSlider(
+                                          icon: kElectricalIcon,
+                                          max: maxElectricalValue,
+                                          min: 0.0,
+                                          value: electricalValue,
+                                          division: maxElectricalValueD,
+                                          unit: '₹',
+                                          onPress: (value) {
+                                            setState(
+                                              () {
+                                                electricalValue = value;
+                                              },
+                                            );
+                                          },
+                                        ),
+                                        InputText(
+                                          text:
+                                              'Preference of Reusable items over Use & throw items?',
+                                        ),
+                                        CustomSlider(
+                                          value: clothingValue,
+                                          min: 0.0,
+                                          max: maxClothingValue,
+                                          icon: kClothesIcon,
+                                          unit: '₹',
+                                          onPress: (value) {
+                                            setState(
+                                              () {
+                                                clothingValue = value;
+                                              },
+                                            );
+                                          },
+                                          division: maxClothingValueD,
+                                        ),
+                                        InputText(
+                                          text:
+                                              'Preference on eco-friendly alternatives to plastic',
+                                        ),
+                                        CustomSlider(
+                                          division: maxHouseholdValueD,
+                                          min: 0.0,
+                                          max: maxHouseholdValue,
+                                          icon: kHouseholdIcon,
+                                          unit: '₹',
+                                          value: householdValue,
+                                          onPress: (value) {
+                                            setState(
+                                              () {
+                                                householdValue = value;
+                                              },
+                                            );
+                                          },
+                                        ),
+                                        InputText(
+                                          text:
+                                              'Preference of e-payments over currency in money transactions?',
+                                        ),
+                                        CustomSlider(
+                                          division: maxMedicalValueD,
+                                          min: 0.0,
+                                          max: maxMedicalValue,
+                                          icon: kMedicalIcon,
+                                          unit: '₹',
+                                          value: medicalValue,
+                                          onPress: (value) {
+                                            setState(
+                                              () {
+                                                medicalValue = value;
+                                              },
+                                            );
+                                          },
+                                        ),
+                                        InputText(
+                                          text:
+                                              'Annual spending on Garments and Furnishings',
+                                        ),
+                                        CustomSlider(
+                                          division: maxMedicalValueD,
+                                          min: 0.0,
+                                          max: maxMedicalValue,
+                                          icon: kMedicalIcon,
+                                          unit: '₹',
+                                          value: eWasteValue,
+                                          onPress: (value) {
+                                            setState(
+                                              () {
+                                                eWasteValue = value;
+                                              },
+                                            );
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        CustomButton(
+                                          inputText: '< Previous',
+                                          onPress: () {
+                                            setState(() {
+                                              foodContainerVisibility = true;
+                                              productContainerVisibility =
+                                                  false;
+                                              containerCount = 1;
+                                            });
+                                            _scrollController.animateTo(
+                                              0.0,
+                                              curve: Curves.easeOut,
+                                              duration: const Duration(
+                                                  milliseconds: 300),
+                                            );
+                                          },
+                                        ),
+                                        CustomButton(
+                                          inputText: 'next >',
                                         ),
                                       ],
                                     ),
@@ -882,148 +1035,6 @@ class _InputScreenState extends State<InputScreen> {
                               ),
                             ),
                           ),
-                          //Food container
-
-                          //product container
-//                          Visibility(
-//                            visible: productContainerVisibility,
-//                            child: Padding(
-//                              padding: kPaddingInputContainer,
-//                              child: Container(
-//                                child: Column(
-//                                  crossAxisAlignment:
-//                                      CrossAxisAlignment.stretch,
-//                                  children: <Widget>[
-//                                    InputHeadingContainer(
-//                                      text: 'Product',
-//                                      image: AssetImage('images/shop.jpg'),
-//                                      fontSize: 25.0,
-//                                    ),
-//                                    Column(
-//                                      crossAxisAlignment:
-//                                          CrossAxisAlignment.start,
-//                                      children: <Widget>[
-//                                        SizedBox(
-//                                          height: 10.0,
-//                                        ),
-//                                        InputText(
-//                                          text:
-//                                              'Average ₹ spent on Electrical product per month(in Rupees)',
-//                                        ),
-//                                        CustomSlider(
-//                                          icon: kElectricalIcon,
-//                                          max: maxElectricalValue,
-//                                          min: 0.0,
-//                                          value: electricalValue,
-//                                          division: maxElectricalValueD,
-//                                          unit: '₹',
-//                                          onPress: (value) {
-//                                            setState(
-//                                              () {
-//                                                electricalValue = value;
-//                                              },
-//                                            );
-//                                          },
-//                                        ),
-//                                        InputText(
-//                                          text:
-//                                              'Average ₹ spent on clothing product per month (in Rupees)',
-//                                        ),
-//                                        CustomSlider(
-//                                          value: clothingValue,
-//                                          min: 0.0,
-//                                          max: maxClothingValue,
-//                                          icon: kClothesIcon,
-//                                          unit: '₹',
-//                                          onPress: (value) {
-//                                            setState(
-//                                              () {
-//                                                clothingValue = value;
-//                                              },
-//                                            );
-//                                          },
-//                                          division: maxClothingValueD,
-//                                        ),
-//                                        InputText(
-//                                          text:
-//                                              'Average ₹ spent on Household product per month (in Rupees)',
-//                                        ),
-//                                        CustomSlider(
-//                                          division: maxHouseholdValueD,
-//                                          min: 0.0,
-//                                          max: maxHouseholdValue,
-//                                          icon: kHouseholdIcon,
-//                                          unit: '₹',
-//                                          value: householdValue,
-//                                          onPress: (value) {
-//                                            setState(
-//                                              () {
-//                                                householdValue = value;
-//                                              },
-//                                            );
-//                                          },
-//                                        ),
-//                                        InputText(
-//                                          text:
-//                                              'Average ₹ spent on Medical product per month (in Rupees)',
-//                                        ),
-//                                        CustomSlider(
-//                                          division: maxMedicalValueD,
-//                                          min: 0.0,
-//                                          max: maxMedicalValue,
-//                                          icon: kMedicalIcon,
-//                                          unit: '₹',
-//                                          value: medicalValue,
-//                                          onPress: (value) {
-//                                            setState(
-//                                              () {
-//                                                medicalValue = value;
-//                                              },
-//                                            );
-//                                          },
-//                                        ),
-//                                      ],
-//                                    ),
-//                                    Row(
-//                                      mainAxisAlignment:
-//                                          MainAxisAlignment.spaceBetween,
-//                                      children: <Widget>[
-//                                        CustomButton(
-//                                          inputText: '< Previous',
-//                                          onPress: () {
-//                                            setState(() {
-//                                              foodContainerVisibility = true;
-//                                              productContainerVisibility =
-//                                                  false;
-//                                              containerCount = 1;
-//                                            });
-//                                            _scrollController.animateTo(
-//                                              0.0,
-//                                              curve: Curves.easeOut,
-//                                              duration: const Duration(
-//                                                  milliseconds: 300),
-//                                            );
-//                                          },
-//                                        ),
-//                                        CustomButton(
-//                                          inputText: 'next >',
-//                                        ),
-//                                      ],
-//                                    ),
-//                                    CustomButton(
-//                                      inputText: 'Calculate Footprint',
-//                                      onPress: () {
-//                                        Navigator.pushNamed(
-//                                            context, ResultScreen.id);
-//                                      },
-//                                    ),
-//                                    //housing container end
-//                                  ],
-//                                ),
-//                                decoration: kInputContainerDecoration,
-//                              ),
-//                            ),
-//                          ),
                           //product container end
                         ],
                       ),

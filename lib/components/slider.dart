@@ -54,13 +54,13 @@ class CustomSlider extends StatelessWidget {
                 min: 0,
                 max: 100,
                 divisions: 4,
-                label: value >= 100
+                label: value == 100
                     ? 'Very High'
-                    : value >= 75
+                    : value == 75
                         ? 'High'
-                        : value >= 50
+                        : value == 50
                             ? 'Moderate'
-                            : value >= 25
+                            : value == 25
                                 ? 'Less'
                                 : 'Very Less',
                 onChanged: onPress,
@@ -68,17 +68,9 @@ class CustomSlider extends StatelessWidget {
             ),
           ),
           // RoundIconButton(buttonIcon: Icons.add, onPress: onPressPlus),
-          // Text(
-          //   value > 80
-          //       ? 'Very High'
-          //       : value > 60
-          //           ? 'High'
-          //           : value > 40
-          //               ? 'Moderate'
-          //               : value > 20
-          //                   ? 'Less'
-          //                   : 'Very Less',
-          // ),
+          // Text(unit != '₹'
+          //     ? '${value.round()} $unit'
+          //     : '$unit ${value.round()}'),
         ],
       ),
     );
